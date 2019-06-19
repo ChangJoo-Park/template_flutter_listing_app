@@ -15,6 +15,12 @@ class LoginPage extends StatelessWidget {
               '로그인 페이지',
               style: TextStyle(fontSize: 50),
             ),
+            RaisedButton(
+              child: Text('Login'),
+              onPressed: () {
+                Navigator.pushReplacementNamed(context, '/');
+              },
+            ),
           ],
         ),
       ),
