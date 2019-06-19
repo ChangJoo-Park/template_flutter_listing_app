@@ -1,5 +1,5 @@
-name: flutter_hacker_news
-description: A new Flutter project.
+name: flutter_listing_app
+description: A new Flutter project for listing templates.
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -23,6 +23,9 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
+  # provider for state managemnet
+  # https://pub.dev/packages/provider
+  provider: ^3.0.0+1
 
 dev_dependencies:
   flutter_test:
