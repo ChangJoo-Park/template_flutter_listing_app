@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'widgets/pages/first_page.dart';
 import 'widgets/pages/second_page.dart';
+import 'widgets/pages/login_page.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -22,6 +23,8 @@ class RouteGenerator {
         // If args is not of the correct type, return an error page.
         // You can also throw an exception while in development.
         return _errorRoute();
+      case '/login':
+        return MaterialPageRoute(builder: (_) => LoginPage());
       default:
         // If there is no such named route in the switch statement, e.g. /third
         return _errorRoute();

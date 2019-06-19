@@ -23,7 +23,13 @@ class FirstPage extends StatelessWidget {
                   arguments: 'Hello there from the first page!',
                 );
               },
-            )
+            ),
+            RaisedButton(
+              child: Text('Go to Login'),
+              onPressed: () {
+                Navigator.pushReplacementNamed(context, '/login');
+              },
+            ),
           ],
         ),
       ),
