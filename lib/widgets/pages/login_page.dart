@@ -68,8 +68,6 @@ class _LoginPageState extends State<LoginPage> {
     if (_formKey.currentState.validate()) {
       // No any error in validation
       _formKey.currentState.save();
-      print("Name $_name");
-      print("Email $_email");
     } else {
       // validation error
       setState(() {
