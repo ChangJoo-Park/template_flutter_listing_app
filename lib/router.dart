@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'widgets/pages/first_page.dart';
+import 'widgets/pages/home_page.dart';
 import 'widgets/pages/second_page.dart';
 import 'widgets/pages/login_page.dart';
 
@@ -10,7 +10,7 @@ class RouteGenerator {
 
     switch (settings.name) {
       case '/':
-        return MaterialPageRoute(builder: (_) => FirstPage());
+        return MaterialPageRoute(builder: (_) => HomePage());
       case '/second':
         // Validation of correct data type
         if (args is String) {

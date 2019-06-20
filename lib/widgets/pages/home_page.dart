@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class FirstPage extends StatelessWidget {
+class HomePage extends StatelessWidget {
   Drawer createDrawer(BuildContext context) {
     return Drawer(
       // Add a ListView to the drawer. This ensures the user can scroll
