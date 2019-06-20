@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+/// createDrawer need [context] for navigate other pages.
+/// Must need [context]
 Drawer createDrawer(BuildContext context) {
   return Drawer(
     // Add a ListView to the drawer. This ensures the user can scroll
