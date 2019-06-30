@@ -8,7 +8,7 @@
 ## TODO
 
 - [x] 테마 변경 State
-- [ ] 사이드바 State
+- [x] Account State
 - [ ] 회원 가입 페이지
 - [ ] 설정페이지
 - [ ] 프로필 페이지
