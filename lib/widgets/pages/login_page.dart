@@ -8,8 +8,8 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   bool _validate = false;
-  String _email;
-  String _password;
+  String _email = '';
+  String _password = '';
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +41,7 @@ class _LoginPageState extends State<LoginPage> {
       keyboardType: TextInputType.text,
       validator: validatePassword,
       onSaved: (String val) {
-        _password = val;
+        this._password = val;
       },
     );
 
@@ -50,7 +50,7 @@ class _LoginPageState extends State<LoginPage> {
       keyboardType: TextInputType.emailAddress,
       validator: validateEmail,
       onSaved: (String val) {
-        _email = val;
+        this._email = val;
       },
     );
 
@@ -68,7 +68,7 @@ class _LoginPageState extends State<LoginPage> {
     if (_formKey.currentState.validate()) {
       // No any error in validation
       _formKey.currentState.save();
-
+      print('$_email, $_password');
       Navigator.pushReplacementNamed(context, '/');
     } else {
       // validation error
