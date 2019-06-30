@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
 import '../drawer.dart';
+import '../../states/account_state.dart';
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final $account = Provider.of<AccountState>(context);
     return Scaffold(
       appBar: AppBar(
         title: Text('Routing App'),
@@ -17,21 +21,29 @@ class HomePage extends StatelessWidget {
               'First Page',
               style: TextStyle(fontSize: 50),
             ),
-            RaisedButton(
-              child: Text('Go to second'),
-              onPressed: () {
-                Navigator.of(context).pushNamed(
-                  '/second',
-                  arguments: 'Hello there from the first page!',
-                );
-              },
+            Text(
+              'Login Status : ${$account.loggedIn}',
             ),
-            RaisedButton(
-              child: Text('Go to Login'),
-              onPressed: () {
-                Navigator.pushReplacementNamed(context, '/login');
-              },
-            ),
+            $account.loggedIn
+                ? RaisedButton(
+                    child: Text('Logout'),
+                    onPressed: Provider.of<AccountState>(context).logout,
+                  )
+                : RaisedButton(
+                    child: Text('Login'),
+                    onPressed: Provider.of<AccountState>(context).login,
+                  ),
+            $account.loggedIn
+                ? RaisedButton(
+                    child: Text('Go to second'),
+                    onPressed: () => Navigator.of(context).pushNamed('/second',
+                        arguments: 'Hello there from the first page!'),
+                  )
+                : RaisedButton(
+                    child: Text('Go to Login'),
+                    onPressed: () =>
+                        Navigator.pushReplacementNamed(context, '/login'),
+                  ),
           ],
         ),
       ),
