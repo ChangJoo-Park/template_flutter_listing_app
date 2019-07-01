@@ -5,7 +5,7 @@ class ThemeState with ChangeNotifier {
 
   ThemeState() {
     appTheme =
-        AppTheme(brightness: Brightness.dark, primarySwatch: Colors.blue);
+        AppTheme(brightness: Brightness.light, primarySwatch: Colors.blue);
   }
   get theme {
     return appTheme;
