@@ -7,15 +7,15 @@ class ListItem {
   ListItem(this.title, this.description);
 }
 
-class SecondPage extends StatefulWidget {
+class ListPage extends StatefulWidget {
   final String data;
 
-  SecondPage({Key key, @required this.data}) : super(key: key);
+  ListPage({Key key, @required this.data}) : super(key: key);
   @override
-  _SecondPageState createState() => _SecondPageState();
+  _ListPageState createState() => _ListPageState();
 }
 
-class _SecondPageState extends State<SecondPage> {
+class _ListPageState extends State<ListPage> {
   var items = [
     ListItem("Hello", "World"),
     ListItem("Hello", "World"),

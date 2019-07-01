@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'widgets/pages/home_page.dart';
-import 'widgets/pages/second_page.dart';
+import 'widgets/pages/list_page.dart';
 import 'widgets/pages/login_page.dart';
 
 class RouteGenerator {
@@ -15,7 +15,7 @@ class RouteGenerator {
         // Validation of correct data type
         if (args is String) {
           return MaterialPageRoute(
-            builder: (_) => SecondPage(
+            builder: (_) => ListPage(
                   data: args,
                 ),
           );

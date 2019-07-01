@@ -83,7 +83,7 @@ Drawer createGuestDrawer(BuildContext context) {
         DrawerHeader(
           child: Text(
             'Please Sign In',
-            style: TextStyle(fontSize: 20),
+            style: TextStyle(fontSize: 20, color: Colors.white),
           ),
           decoration: BoxDecoration(
             color: Colors.blue,
