@@ -1,34 +1,45 @@
 import 'package:flutter/material.dart';
 
-class SecondPage extends StatelessWidget {
-  // This is a String for the sake of an example.
-  // You can use any type you want.
+class ListItem {
+  String title;
+  String description;
+
+  ListItem(this.title, this.description);
+}
+
+class SecondPage extends StatefulWidget {
   final String data;
 
-  SecondPage({
-    Key key,
-    @required this.data,
-  }) : super(key: key);
+  SecondPage({Key key, @required this.data}) : super(key: key);
+  @override
+  _SecondPageState createState() => _SecondPageState();
+}
+
+class _SecondPageState extends State<SecondPage> {
+  var items = [
+    ListItem("Hello", "World"),
+    ListItem("Hello", "World"),
+    ListItem("Hello", "World"),
+    ListItem("Hello", "World"),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Routing App'),
+        title: Text('Listing'),
       ),
-      body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            Text(
-              'Second Page',
-              style: TextStyle(fontSize: 50),
-            ),
-            Text(
-              data,
-              style: TextStyle(fontSize: 20),
-            ),
-          ],
+      body: Container(
+        padding: EdgeInsets.all(0),
+        child: ListView.builder(
+          itemCount: items.length,
+          itemBuilder: (context, index) {
+            return ListTile(
+              title: Text('${items[index].title}'),
+              subtitle: Text('${items[index].description}'),
+              onTap: () {},
+            );
+          },
         ),
       ),
     );
