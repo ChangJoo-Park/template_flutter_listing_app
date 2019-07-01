@@ -36,7 +36,7 @@ class HomePage extends StatelessWidget {
             $account.loggedIn
                 ? RaisedButton(
                     child: Text('Go to second'),
-                    onPressed: () => Navigator.of(context).pushNamed('/second',
+                    onPressed: () => Navigator.of(context).pushNamed('/listing',
                         arguments: 'Hello there from the first page!'),
                   )
                 : RaisedButton(

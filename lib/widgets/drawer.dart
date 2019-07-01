@@ -33,11 +33,18 @@ Drawer createUserAccountDrawer(BuildContext context, AccountState account) {
           },
         ),
         ListTile(
-          title: Text('Second Page'),
+          title: Text('Listing Page'),
           onTap: () {
             Navigator.of(context).pop();
             Navigator.of(context)
-                .pushNamed('/second', arguments: "Hello there, from HomePage");
+                .pushNamed('/listing', arguments: "Hello there, from HomePage");
+          },
+        ),
+        ListTile(
+          title: Text('Setting'),
+          onTap: () {
+            Navigator.of(context).pop();
+            Navigator.of(context).pushNamed('/settings');
           },
         ),
         ListTile(

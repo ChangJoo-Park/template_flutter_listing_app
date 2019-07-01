@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_listing_app/widgets/pages/setting_page.dart';
 import 'widgets/pages/home_page.dart';
 import 'widgets/pages/list_page.dart';
 import 'widgets/pages/login_page.dart';
@@ -11,7 +12,7 @@ class RouteGenerator {
     switch (settings.name) {
       case '/':
         return MaterialPageRoute(builder: (_) => HomePage());
-      case '/second':
+      case '/listing':
         // Validation of correct data type
         if (args is String) {
           return MaterialPageRoute(
@@ -23,6 +24,10 @@ class RouteGenerator {
         // If args is not of the correct type, return an error page.
         // You can also throw an exception while in development.
         return _errorRoute();
+      case '/settings':
+        return MaterialPageRoute(
+          builder: (_) => SettingPage(),
+        );
       case '/login':
         return MaterialPageRoute(builder: (_) => LoginPage());
       default:
