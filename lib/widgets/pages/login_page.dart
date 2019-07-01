@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_listing_app/states/account_state.dart';
+import 'package:provider/provider.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -69,6 +71,9 @@ class _LoginPageState extends State<LoginPage> {
       // No any error in validation
       _formKey.currentState.save();
       print('$_email, $_password');
+      AccountState $account =
+          Provider.of<AccountState>(_formKey.currentContext);
+      $account.login();
       Navigator.pushReplacementNamed(context, '/');
     } else {
       // validation error
