@@ -43,8 +43,27 @@ Drawer createUserAccountDrawer(BuildContext context, AccountState account) {
         ListTile(
           title: Text('Logout'),
           onTap: () {
-            account.logout();
-            Navigator.of(context).pop();
+            showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return AlertDialog(
+                    title: Text("Logout?"),
+                    actions: <Widget>[
+                      FlatButton(
+                        child: Text("Logout"),
+                        onPressed: () {
+                          account.logout();
+                          Navigator.of(context).pop();
+                          Navigator.of(context).pop();
+                        },
+                      ),
+                      FlatButton(
+                        child: Text("Cancel"),
+                        onPressed: () => Navigator.of(context).pop,
+                      ),
+                    ],
+                  );
+                });
           },
         ),
       ],
