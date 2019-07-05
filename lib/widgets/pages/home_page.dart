@@ -44,6 +44,14 @@ class HomePage extends StatelessWidget {
                     onPressed: () =>
                         Navigator.pushReplacementNamed(context, '/login'),
                   ),
+            RaisedButton(
+              child: Text("Run Background"),
+              onPressed: () {},
+            ),
+            RaisedButton(
+              child: Text("Stop Background"),
+              onPressed: () {},
+            ),
           ],
         ),
       ),
